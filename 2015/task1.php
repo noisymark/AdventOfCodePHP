@@ -6,9 +6,15 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         foreach($array as $v){
            if($v=='('){
             $rezultat+=1;
+            $text1='<h1 style="text-align:center;color:red;">FLOOR: ';
+            $text2=' </h1>';
            } else if($v==')'){
             $rezultat-=1;
+            $text1='<h1 style="text-align:center;color:red;">FLOOR: ';
+            $text2=' </h1>';
            } else{
+            $text1 = '<h1 style="text-align:center;color:red;"> PLEASE ENTER IN CORRECT FORMAT "(" OR ")"';
+            $text2 = '</h1>';
             continue;
            }
         }
@@ -32,6 +38,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         <br><br>
         <input type="submit" value="SET">
     </form>
-    <h1 style="text-align:center;color:red;">FLOOR: <?=$rezultat?></h1>
+    <?php echo $text1 . $rezultat . $text2; ?>
 </body>
 </html>
