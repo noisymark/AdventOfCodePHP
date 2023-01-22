@@ -4,29 +4,29 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $h='';
         $warning='PLEASE ENTER A VALID VALUE (NUMBER MUST BE HIGHER THAN 0)<br>';
         echo $warning;
-    } else{
-        $h=$_POST['h'];
+    } else if((int)($_POST['h'])!==0){
+        $h=(int)$_POST['h'];
     }
     if((int)($_POST['l'])===0){
         $l='';
         $warning='PLEASE ENTER A VALID VALUE (NUMBER MUST BE HIGHER THAN 0)<br>';
         echo $warning;
-    } else{
-        $l=$_POST['l'];
+    } else if((int)($_POST['l'])!==0){
+        $l=(int)$_POST['l'];
     }
     if((int)($_POST['w'])===0){
         $w='';
         $warning='PLEASE ENTER A VALID VALUE (NUMBER MUST BE HIGHER THAN 0)<br>';
         echo $warning;
-    } else{
-        $w=$_POST['w'];
+    } else if((int)($_POST['w'])!==0){
+        $w=(int)$_POST['w'];
     }
-    $array=[$h*$l, $l*$w, $h*$w];
-    $najmanjibroj=min($array);
-  $k=2*$h*$l;
-  $m=2*$l*$w;
-  $r=2*$h*$w;
-  $rez=$k+$m+$r+$najmanjibroj;
+    $array=[(int)$h*(int)$l, (int)$l*(int)$w, (int)$h*(int)$w];
+    (int)$najmanjibroj=min($array);
+    (int)$k=2*(int)$h*(int)$l;
+    (int)$m=2*(int)$l*(int)$w;
+    (int)$r=2*(int)$h*(int)$w;
+    (int)$rez=(int)$k+(int)$m+(int)$r+(int)$najmanjibroj;
 
 }
   else{
@@ -34,6 +34,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $h='';
     $l='';
     $w='';
+    $rez='';
     
   }
 ?>

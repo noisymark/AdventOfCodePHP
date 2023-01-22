@@ -1,6 +1,6 @@
 <?php
 if($_SERVER['REQUEST_METHOD']==='POST'){
-  
+  $rezultat=0;
     if($upute=$_POST['upute']){
         $array=str_split($upute);
         foreach($array as $v){
@@ -25,7 +25,9 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     
   
   }else{
-    
+    $text1='';
+    $rezultat='';
+    $text2='';
   }
 ?>
 <!DOCTYPE html>
